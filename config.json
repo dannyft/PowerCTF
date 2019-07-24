@@ -1,0 +1,21 @@
+{
+    "images": {
+        "empire": "empireproject/empire",
+        "wfuzz": "wfuzz"
+    },
+    "modules": [
+        "@empire/empire.psm1",
+        "@gef/gef.psm1",
+        "@gobuster/gobuster.psm1",
+        "@impacket/impacket.psm1",
+        "@kali/kali.psm1",
+        "@merlin/merlin.psm1",
+        "@metasploit/metasploit.psm1",
+        "@nikto/nikto.psm1",
+        "@pwntools/pwntools.psm1",
+        "@radare2/radare2.psm1",
+        "@serve/serve.psm1",
+        "@shell/shell.psm1",
+        "@wfuzz/wfuzz.psm1"
+    ]
+}
