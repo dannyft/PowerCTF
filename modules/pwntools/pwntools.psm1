@@ -18,7 +18,7 @@ function pwntools {
 
     $cwd = (Get-Item -Path ".\").FullName
 
-    $docker_image = GetConfig -key "images.pwntools" -default "pwntools"
+    $docker_image = GetConfig -key "images.pwntools"
     $args = "run", "--rm", "-it", "-v", "${cwd}:/project", "-w", "/project"
     $args += GetMountArgs
     $args += "--cap-add=SYS_PTRACE", "--security-opt", "seccomp=unconfined"
@@ -58,7 +58,7 @@ function pwntools_env {
     )
 
     $cwd = (Get-Item -Path ".\").FullName
-    $docker_image = GetConfig -key "images.pwntools" -default "pwntools"
+    $docker_image = GetConfig -key "images.pwntools"
     $args = "run", "--rm", "-it", "-v", "${cwd}:/project", "-w", "/project", $docker_image
     $args += GetMountArgs
 

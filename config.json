@@ -1,7 +1,18 @@
 {
     "images": {
-        "empire": "empireproject/empire",
-        "wfuzz": "wfuzz"
+        "empire": "empireproject/empire:latest",
+        "gef": "dannyft/gef:latest",
+        "gobuster": "dannyft/gobuster:latest",
+        "impacket": "rflathers/impacket:latest",
+        "kali": "dannyft/kali:lates",
+        "merlin": "dannyft/merlin:latest",
+        "metasploit": "metasploitframework/metasploit-framework:latest",
+        "nikto": "kalo/nikto2:latest",
+        "pwntools": "dannyft/pwntools:latest",
+        "radare2": "ryarnyah/r2docker:latest",
+        "wfuzz": "dannyft/wfuzz:latest",
+        "nginx": "rflathers/nginxserve:latest",
+        "webdav": "rflathers/webdav"
     },
     "modules": [
         "@empire/empire.psm1",

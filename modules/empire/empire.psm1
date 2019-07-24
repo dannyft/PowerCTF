@@ -6,7 +6,7 @@ function empire {
 
     $cwd = (Get-Item -Path ".\").FullName
 
-    $docker_image = GetConfig -key "images.empire" -default "empireproject/empire"
+    $docker_image = GetConfig -key "images.empire"
     $docker_args = "run", "--rm", "-it", "--net", "host", "-v", "${cwd}:/project"
     $docker_args += GetMountArgs
 

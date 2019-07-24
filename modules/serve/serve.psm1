@@ -52,7 +52,7 @@ function serve_webdav {
     )
 
     $cwd = (Get-Item -Path ".\").FullName
-    $docker_image = GetConfig -key "images.webdav" -default "rflathers/webdav"
+    $docker_image = GetConfig -key "images.webdav"
     $args = "run", "--rm", "-it",
             "-p", "${Port}:80",
             "-v", "${cwd}:/srv/data/share",

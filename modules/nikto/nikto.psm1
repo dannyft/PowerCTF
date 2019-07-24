@@ -5,7 +5,7 @@ function nikto {
 
     $cwd = (Get-Item -Path ".\").FullName
 
-    $docker_image = GetConfig -key "images.nikto" -default "kalo/nikto2:latest"
+    $docker_image = GetConfig -key "images.nikto"
     $docker_args = "run", "--rm", "-it", "-v", "${cwd}:/project", "-w", "/project"
     $docker_args += GetMountArgs
 

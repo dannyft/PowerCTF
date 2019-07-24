@@ -9,3 +9,4 @@ RUN wget -q -O- https://github.com/hugsy/gef/raw/master/scripts/gef.sh | sh
 RUN pip install capstone requests pwn r2pipe
 RUN pip3 install unicorn capstone ropper keystone-engine
 RUN git clone https://github.com/JonathanSalwan/ROPgadget /opt/ROPgadget
+RUN apt-get autoremove -y && apt-get clean -y

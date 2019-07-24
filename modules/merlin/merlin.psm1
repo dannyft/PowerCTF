@@ -7,7 +7,7 @@ function merlin {
 
     $cwd = (Get-Item -Path ".\").FullName
 
-    $docker_image = GetConfig -key "images.merlin" -default "merlin:latest"
+    $docker_image = GetConfig -key "images.merlin"
     $docker_args = "run", "--rm", "-it", "-v", "${cwd}:/project",
                    "-p", "${$Port}:443"
     $docker_args += GetMountArgs

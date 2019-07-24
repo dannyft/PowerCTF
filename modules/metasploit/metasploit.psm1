@@ -6,7 +6,7 @@ function metasploit {
 
     $cwd = (Get-Item -Path ".\").FullName
 
-    $docker_image = GetConfig -key "images.metasploit" -default "metasploitframework/metasploit-framework"
+    $docker_image = GetConfig -key "images.metasploit"
     $docker_args = "run", "--rm", "-it", "--net", "host", "-v", "${cwd}:/project"
     $docker_args += GetMountArgs
 
@@ -23,7 +23,7 @@ function msfvenom {
 
     $cwd = (Get-Item -Path ".\").FullName
 
-    $docker_image = GetConfig -key "images.metasploit" -default "metasploitframework/metasploit-framework"
+    $docker_image = GetConfig -key "images.metasploit"
     $docker_args = "run", "--rm", "-it", "-v", "${cwd}:/project"
     $docker_args += GetMountArgs
 

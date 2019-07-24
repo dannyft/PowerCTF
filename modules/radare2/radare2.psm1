@@ -6,7 +6,7 @@ function r2 {
 
     $cwd = (Get-Item -Path ".\").FullName
 
-    $docker_image = GetConfig -key "images.radare2" -default "ryarnyah/r2docker"
+    $docker_image = GetConfig -key "images.radare2"
     $docker_args = "run", "--rm", "-it", "-v", "${cwd}:/project", "-w", "/project"
     $docker_args += GetMountArgs
     $docker_args += "--cap-add=SYS_PTRACE", "--security-opt", "seccomp=unconfined"
@@ -52,4 +52,5 @@ function rahash2 {
     r2 -Cmd "rahash2"
 }
 
-Export-ModuleMember -Function "r2", "rax2", "rafind2", "rarun2", "rabin2", "radiff2", "rasm2", "ragg2", "ragg2", "rahash2"
+Export-ModuleMember -Function "r2", "rax2", "rafind2", "rarun2", "rabin2", "radiff2", 
+                              "rasm2", "ragg2", "ragg2", "rahash2"

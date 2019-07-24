@@ -6,7 +6,7 @@ function gef {
 
     $cwd = (Get-Item -Path ".\").FullName
 
-    $docker_image = GetConfig -key "images.gef" -default "gef"
+    $docker_image = GetConfig -key "images.gef"
     $docker_args = "run", "--rm", "-it", "-v", "${cwd}:/project", "-w", "/project"
     $docker_args += GetMountArgs
     $docker_args += "--cap-add=SYS_PTRACE", "--security-opt", "seccomp=unconfined"
