@@ -23,3 +23,5 @@ function osmedeus {
 
     docker $docker_args
 }
+
+Export-ModuleMember -Function "osmedeus"

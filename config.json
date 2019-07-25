@@ -11,6 +11,7 @@
         "osmedeus": "mablanco/osmedeus:latest",
         "pwntools": "dannyft/pwntools:latest",
         "radare2": "ryarnyah/r2docker:latest",
+        "spiderfoot": "dannyft/spiderfoot:latest",
         "wfuzz": "dannyft/wfuzz:latest",
         "nginx": "rflathers/nginxserve:latest",
         "webdav": "rflathers/webdav"
@@ -29,6 +30,7 @@
         "@radare2/radare2.psm1",
         "@serve/serve.psm1",
         "@shell/shell.psm1",
+        "@spiderfoot/spiderfoot.psm1",
         "@wfuzz/wfuzz.psm1"
     ]
 }
