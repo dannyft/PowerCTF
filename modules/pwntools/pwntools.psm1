@@ -61,6 +61,7 @@ function pwntools_env {
     $docker_image = GetConfig -key "images.pwntools"
     $args = "run", "--rm", "-it", "-v", "${cwd}:/project", "-w", "/project", $docker_image
     $args += GetMountArgs
+    $args += "--cap-add=SYS_PTRACE", "--security-opt", "seccomp=unconfined"
 
     if ($Create) {
         $args_create = $args + "virtualenv", "--system-site-packages", $PYTHON_ENV_DIR

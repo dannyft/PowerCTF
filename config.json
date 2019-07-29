@@ -32,5 +32,10 @@
         "@shell/shell.psm1",
         "@spiderfoot/spiderfoot.psm1",
         "@wfuzz/wfuzz.psm1"
-    ]
+    ],
+    "nmap": {
+        "templates": {
+            "default": [ "-sC", "-sV", "-oA", "scan" ]
+        }
+    }
 }

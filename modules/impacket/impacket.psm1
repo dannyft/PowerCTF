@@ -1,6 +1,7 @@
 function impacket {
     param(
-        [switch] $Shell
+        [switch] $Shell,
+        [parameter(mandatory=$false, position=1, ValueFromRemainingArguments=$true)] [string[]] $Args
     )
 
     $cwd = (Get-Item -Path ".\").FullName
@@ -12,7 +13,7 @@ function impacket {
     if ($Shell) {
         $docker_args += "--entrypoint=/bin/bash", $docker_image
     } else {
-        $docker_args += $docker_image, $args
+        $docker_args += $docker_image, $Args
     }
 
     docker $docker_args

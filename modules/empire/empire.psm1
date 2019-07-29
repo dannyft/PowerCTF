@@ -1,7 +1,8 @@
 function empire {
 
     param(
-        [switch] $Shell = $false
+        [switch] $Shell = $false,
+        [parameter(mandatory=$false, position=1, ValueFromRemainingArguments=$true)] [string[]] $Args
     )
 
     $cwd = (Get-Item -Path ".\").FullName
@@ -13,7 +14,7 @@ function empire {
     if ($Shell) {
         $docker_args += "--entrypoint", "/bin/bash", $docker_image
     } else {
-        $docker_args += $docker_image, "empire", $args
+        $docker_args += $docker_image, "empire", $Args
     }
 
     docker $docker_args

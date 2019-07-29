@@ -1,7 +1,8 @@
 function gef {
     param(
         [switch] $Shell = $false,
-        [string[]] $Ports = @()
+        [string[]] $Ports = @(),
+        [parameter(mandatory=$false, position=1, ValueFromRemainingArguments=$true)] [string[]] $Args
     )
 
     $cwd = (Get-Item -Path ".\").FullName
@@ -18,7 +19,7 @@ function gef {
     if ($Shell) {
         $docker_args += "--entrypoint=/bin/bash", $docker_image
     } else {
-        $docker_args += $docker_image, "gdb", $args
+        $docker_args += $docker_image, "gdb", $Args
     }
 
     docker $docker_args

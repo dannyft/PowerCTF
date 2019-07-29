@@ -1,6 +1,7 @@
 function wfuzz {
     param(
-        [switch] $Shell
+        [switch] $Shell,
+        [parameter(mandatory=$false, position=1, ValueFromRemainingArguments=$true)] [string[]] $Args
     )
 
     $cwd = (Get-Item -Path ".\").FullName
@@ -12,7 +13,7 @@ function wfuzz {
     if ($Shell) {
         $docker_args += "--entrypoint=/bin/sh", $docker_image
     } else {
-        $docker_args += $docker_image, "wfuzz", $args
+        $docker_args += $docker_image, "wfuzz", $Args
     }
 
     docker $docker_args

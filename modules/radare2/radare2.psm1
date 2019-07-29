@@ -1,7 +1,8 @@
 function r2 {
     param(
         [switch] $Shell,
-        [string] $Cmd = "r2"
+        [string] $Cmd = "r2",
+        [parameter(mandatory=$false, position=2, ValueFromRemainingArguments=$true)] [string[]] $Args
     )
 
     $cwd = (Get-Item -Path ".\").FullName
@@ -14,7 +15,7 @@ function r2 {
     if ($Shell) {
         $docker_args += "--entrypoint=/bin/bash", $docker_image
     } else {
-        $docker_args += $docker_image, $Cmd, $args
+        $docker_args += $docker_image, $Cmd, $Args
     }
 
     docker $docker_args
